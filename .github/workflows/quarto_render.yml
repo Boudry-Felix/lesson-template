@@ -18,3 +18,11 @@ jobs:
 
       - name: Render Quarto files
         run: quarto render -M embed-resources:true --output-dir output/
+
+      - name: Commit and push rendered files
+        run: |
+          git config --local user.email ${{ github.event.pusher.email }}
+          git config --local user.name ${{ github.event.pusher.name }}
+          git add output/
+          git commit -m "GitHub Actions: Rendered Quarto files"
+          git push
