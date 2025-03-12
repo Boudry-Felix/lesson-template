@@ -1,0 +1,5 @@
+# Quarto folder and files generated when rendering
+/.quarto/
+*_files/
+*.html
+*.pdf

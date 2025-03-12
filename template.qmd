@@ -1,0 +1,7 @@
+---
+title: "Template"
+description: "Template"
+---
+
+{{< include lecture/module1.qmd >}}
+{{< include lecture/module2.qmd >}}
