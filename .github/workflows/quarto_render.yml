@@ -21,8 +21,12 @@ jobs:
 
       - name: Commit and push rendered files
         run: |
-          git config --local user.email ${{ github.event.pusher.email }}
-          git config --local user.name ${{ github.event.pusher.name }}
-          git add output/
+          git config --global user.email ${{ github.event.pusher.email || 'default@example.com' }}
+          git config --global user.name ${{ github.event.pusher.name || 'default-username'}}
+          git clone ${{ secrets.DEST_REPO }} ../dest_repo
+          mkdir -p ../dest_repo/${{ github.event.repository.name }}
+          mv output/* ../dest_repo/${{ github.event.repository.name }}
+          cd ../dest_repo
+          git add .
           git commit -m "GitHub Actions: Rendered Quarto files"
           git push
