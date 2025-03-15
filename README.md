@@ -17,6 +17,9 @@ This repository is a template for creating lessons based on Quarto files. Each f
 1. Create a new Quarto file in the `lecture/`, `tutorial/` or `practicum/` directory.
 2. Add a reference to the new module in the global Quarto file.
 
+> [!NOTE]  
+> You can indicate assets path as if you were in the `assets/` folder.
+
 ## How to Generate the Combined Output
 
 1. Open the global Quarto file.
