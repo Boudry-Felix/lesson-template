@@ -27,3 +27,5 @@ date-meta: today
 
 # Additional files
 css: styles/style.css
+resource-path: 
+  - assets

@@ -25,6 +25,7 @@ jobs:
           git config --global user.name ${{ github.event.pusher.name || 'default-username'}}
           git clone ${{ secrets.DEST_REPO }} ../dest_repo
           mkdir -p ../dest_repo/${{ github.event.repository.name }}
+          rm -rf ../dest_repo/${{ github.event.repository.name }}/*
           mv output/* ../dest_repo/${{ github.event.repository.name }}
           cd ../dest_repo
           git add .
